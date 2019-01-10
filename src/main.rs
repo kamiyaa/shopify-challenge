@@ -38,7 +38,7 @@ impl<T> JsonObjVec<T> {
     }
 }
 
-
+/// Handler for GET / Request
 #[get("/")]
 fn default_page() -> &'static str {
     "Hello, Shopify!"
@@ -55,11 +55,13 @@ fn all_products_to_json() -> String
     serde_json::to_string_pretty(&products).unwrap_or(String::from("{}"))
 }
 
+/// Handler for GET /api/products Request
 #[get("/api/products")]
 fn get_all_products() -> String {
     all_products_to_json()
 }
 
+/// Handler for GET /api/products/<title> Request
 #[get("/api/products/<title>")]
 fn get_product(title: String) -> String {
     let db = database.lock().unwrap();
@@ -69,6 +71,7 @@ fn get_product(title: String) -> String {
     }
 }
 
+/// Populate the reference database
 fn populate_database()
 {
     let mut db = database.lock().unwrap();
@@ -99,6 +102,6 @@ fn populate_database()
 fn main() {
     populate_database();
 
-    rocket::ignite().mount("/", routes![default_page, get_product, get_all_products]).launch();
-//    rocket::ignite().launch();
+    let routes = routes![default_page, get_product, get_all_products];
+    rocket::ignite().mount("/", routes).launch();
 }

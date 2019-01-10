@@ -21,7 +21,7 @@ setting production deployment settings
 address = "192.168.0.1"
 port = 8000
 ```
-
+Running the server:
 ```
 ~$ cargo build	# compile
 ~$ ROCKET_ENV=development ./target/debug/shopify-challenge	# for development deployment
@@ -33,6 +33,13 @@ Head to:
 /			# landing page
 /api/products		# get all products
 /api/products/<title>	# get specific product
+```
+examples:
+```
+http://localhost:8000/api/products		# for a list of all products
+http://localhost:8000/api/products/Apples	# for specific product
+http://localhost:8000/api/products/Pears
+http://localhost:8000/api/products/Banana
 ```
 
 ##

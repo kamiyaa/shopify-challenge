@@ -11,7 +11,10 @@ This is my attempt at the Shopify Summer 2019 Developer Intern Challenge Questio
 
 ### Configuration
 Edit `Rocket.toml` to configure server settings.
-e.g. setting development deployment settings
+
+e.g.
+
+setting development deployment settings
 ```toml
 [development]
 address = "localhost"

@@ -8,6 +8,8 @@ This is my attempt at the Shopify Summer 2019 Developer Intern Challenge Questio
  - Cargo nightly
 
 ## Usage
+
+### Configuration
 Edit `Rocket.toml` to configure server settings.
 e.g. setting development deployment settings
 ```toml
@@ -23,6 +25,7 @@ address = "192.168.0.1"
 port = 8000
 ```
 
+### Running
 Running the server:
 ```sh
 ~$ cargo build	# compile
@@ -30,6 +33,7 @@ Running the server:
 ~$ ROCKET_ENV=production ./target/debug/shopify-challenge	# for production deployment
 ```
 
+### API Utilization
 Head to:
 ```sh
 /			# landing page
@@ -37,7 +41,7 @@ Head to:
 /api/products/<title>	# get specific product
 ```
 
-examples:
+#### examples
 ```
 http://localhost:8000/api/products		# for a list of all products
 http://localhost:8000/api/products/Apples	# for specific product
@@ -45,7 +49,9 @@ http://localhost:8000/api/products/Pears
 http://localhost:8000/api/products/Banana
 ```
 
-example specific product output:
+#### example output
+
+Specific Product:
 ```json
 {
   "title": "Pears",
@@ -53,7 +59,7 @@ example specific product output:
   "inventory": 15
 }
 ```
-example all product output:
+All Products:
 ```json
 {
   "results": [

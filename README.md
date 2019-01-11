@@ -41,5 +41,36 @@ http://localhost:8000/api/products/Apples	# for specific product
 http://localhost:8000/api/products/Pears
 http://localhost:8000/api/products/Banana
 ```
+example specific product output:
+```json
+{
+  "title": "Pears",
+  "price": 6.0,
+  "inventory": 15
+}
+```
+example all product output:
+```json
+{
+  "results": [
+    {
+      "title": "Pears",
+      "price": 6.0,
+      "inventory": 15
+    },
+    {
+      "title": "Banana",
+      "price": 4.0,
+      "inventory": 19
+    },
+    {
+      "title": "Apples",
+      "price": 5.0,
+      "inventory": 10
+    }
+  ]
+}
+```
+
 
 ##

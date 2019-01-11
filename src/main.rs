@@ -76,6 +76,7 @@ fn populate_database()
 {
     let mut db = database.lock().unwrap();
 
+    // put in some test data
     let product = Product {
             title: String::from("Apples"),
             price: 5.00,
